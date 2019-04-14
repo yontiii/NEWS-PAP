@@ -10,6 +10,12 @@
         {% endif %}
     </head>
     <body>
-
+        <!-- sources section -->
+            <div>
+                {% for source in sources %}
+                <h2>{{source.name}}</h2>
+                <p>{{source.description}}</p>
+                <a href="{{source.url}}">VISIT SITE</a>
+            </div>
     </body>
 </html>
