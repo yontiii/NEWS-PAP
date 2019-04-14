@@ -40,6 +40,31 @@ def process_sources(sources_list):
     Function that processesses the source results and turns them to a list of objects
     '''
     
+    sources_results = []
+    
+    for source in sources_list:
+        id = source.get('id')
+        name = source.get("name")
+        description = source.get('description')
+        url = source.get('url')
+        category = source.get('category')
+        language = source.get('language')
+        
+        if language == en:
+            
+            source_object = News(id,name,description,url,category)
+            sources_results.append(source_object)
+            
+    return sources_results
+
+
+def get_articles(id):
+    '''
+    function to get json 
+            
+        
+    
+    
             
     
     
