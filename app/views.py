@@ -10,8 +10,9 @@ def index():
     '''
     
     message = 'Hello world'
+    title = 'Quick Facts | Instant News'
     
-    return render_template('index.html',nessage = message)
+    return render_template('index.html',title = title)
 
 @app.route('/articles/<id>')
 def articles(id):
