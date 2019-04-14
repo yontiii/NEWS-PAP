@@ -7,7 +7,7 @@ News = news.News
 Headlines = headlines.Headlines
 
 
-api_key = app.congi]['NEWS_API_KEY']
+api_key = app.congig['NEWS_API_KEY']
 
 # Getting the base urls
 
@@ -16,12 +16,10 @@ articles_url = app.config['Articles_URL']
 headlines_url = app.config['  HEADLINES_URL']
 
 def get_sources(category):
-     '''
+    '''
     Function that gets the json response to our url request
     '''
-    
     get_sources_url = sources_url.format(category,api_key)
-    
     with urllib.request.urlopen(get_sources_url) as url:
         sources_data = url.read()
         sources_response = json.loads(sources_data)
