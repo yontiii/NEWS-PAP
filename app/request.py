@@ -3,17 +3,17 @@ import urllib.request,json
 from .models import articles,news,headlines
 
 Articles = articles.Articles
-News = news.News
+Sources = news.Sources
 Headlines = headlines.Headlines
 
 
-api_key = app.congig['NEWS_API_KEY']
+api_key = app.config['NEWS_API_KEY']
 
 # Getting the base urls
 
-sources_url = app.config['SOURCES_URL']
-articles_url = app.config['Articles_URL']
-headlines_url = app.config['  HEADLINES_URL']
+sources_url = app.config['NEWS_URL']
+articles_url = app.config['ARTICLES_URL']
+headlines_url = app.config['HEADLINES_URL']
 
 def get_sources(category):
     '''
@@ -29,7 +29,7 @@ def get_sources(category):
         if sources_response['sources']:
             sources_list = sources_response['sources']
             
-            sources_results = process_sources(source_results_list)
+            sources_results = process_sources(sources_list)
             
         return sources_results
     
@@ -48,9 +48,9 @@ def process_sources(sources_list):
         category = source.get('category')
         language = source.get('language')
         
-        if language == en:
+        if language == 'en':
             
-            source_object = News(id,name,description,url,category)
+            source_object =Sources(id,name,description,url,category,language)
             sources_results.append(source_object)
             
     return sources_results
