@@ -26,16 +26,17 @@
         
                         <div class="col-md-4">
                             <div class="card-deck">
-                                    <div class="card">
+                                    <div class="card" style="">
                                             <div class="card-content">
                                                 <div class="card-header-blue" style="color:#03A9F4">
                                                    <h2 class="card-heading" style="text-align:center">{{source.name}}</h2>
                                                    </div>
                                                    <div class="card-body">
-                                                   <p class="card-p">
+                                                   <p class="card-p" style="font-size:18px ">
                                                         {{source.description | truncate(80)}}
                                                         
                                                     </p>
+                                                    <a href="/articles/{{source.id}}" class="btn btn-info btn-sm "><i class="fal fa-forward">VIEW ARTICLES</i></a>
                                                  </div>
                                     </div>
                                     
