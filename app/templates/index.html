@@ -13,28 +13,40 @@
         
     </head>
     <body>
+
+        {% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
         <!-- sources section -->
         {% block content %}
-            <div class="row">
-                {% for source in sources %}
-
-                <div class="col-md-3">
-                    <div class="card-group">
-                        <div class="card">
-                            <div class="card-header"> 
-                                <h3>{{source.name}}</h3>
+        <div class="container">
+                <div class="row">
+                        {% for source in sources %}
+        
+                        <div class="col-md-4">
+                            <div class="card-deck">
+                                    <div class="card">
+                                            <div class="card-content">
+                                                <div class="card-header-blue" style="color:#03A9F4">
+                                                   <h2 class="card-heading" style="text-align:center">{{source.name}}</h2>
+                                                   </div>
+                                                   <div class="card-body">
+                                                   <p class="card-p">
+                                                        {{source.description | truncate(80)}}
+                                                        
+                                                    </p>
+                                                 </div>
+                                    </div>
+                                    
+                                    </div>
                             </div>
-                            <div class="card-body">
-                                <p class="card-text">{{source.description}}</p>
-                            </div>
-                        </div>
+                        
                     </div>
-
-                
-            </div>
-            </div>
-            {% endfor %}
-            </div>
+                    {% endfor %}
+                    </div>
+        </div>
+           
             {% endblock %}
     </body>
 </html>
