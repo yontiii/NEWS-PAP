@@ -24,4 +24,6 @@ def articles(id):
     '''
     View movie page function that returns the movie details page and its data
     '''
-    return render_template('articles.html',id = id)
+    
+    articles = get_articles(id)
+    return render_template('articles.html',id = id, articles=articles)

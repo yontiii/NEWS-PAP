@@ -72,7 +72,7 @@ def get_articles(id):
         
         if articles_response['articles']:
             articles_list =  articles_response['articles']
-            articles_results = process_articles(articles_results_list)
+            articles_results = process_articles(articles_list)
             
         return articles_results
     
@@ -82,7 +82,9 @@ def process_articles(articles_list):
     
     for article in articles_list:
         id = article['source']['id']
+        name = article.get('name')
         author = article.get('author')
+        content = article.get('content')
         title = article.get('title')
         description = article.get('description')
         url = article.get('url')
