@@ -8,17 +8,31 @@
         {% else %}
         <title> QUICK FACTS </title>
         {% endif %}
+
+        {% extends 'base.html'%}
+        
     </head>
     <body>
         <!-- sources section -->
-            <div>
+        {% block content %}
+            <div class="row">
                 {% for source in sources %}
-                <h2>{{source.name}}</h2>
+                <!-- <h2>{{source.name}}</h2>
                 <p>{{source.description}}</p>
                 <a href="{{source.url}}" target="_blank">VISIT SITE</a>
-                <a href="/articles/{{source.id}}">view articles</a>
+                <a href="/articles/{{source.id}}">view articles</a> -->
 
-                {% endfor %}
+                <div class="card mb-3" style="max-width: 50rem;">
+                    <!-- <img class="card-img-top" src="{{article.urlToImage}}" style="width:500px;height: 200px;" alt="Card image cap"> -->
+                    <div class="card-body">
+                        <h5 class="card-title">  {{source.title}} </a></h5>
+                        <p class="card-text">{{source.description}}</p>
+                        <p class="card-text"><small class="text-muted">{{source.description}}</small></p>
+                    </div>
+                </div>
             </div>
+            {% endfor %}
+            </div>
+            {% endblock %}
     </body>
 </html>
