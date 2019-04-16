@@ -44,7 +44,7 @@ def process_sources(sources_list):
         id = source.get('id')
         name = source.get("name")
         description = source.get('description')
-        url = source.get('url')[0:10]
+        url = source.get('url')
         category = source.get('category')
         language = source.get('language')
         
@@ -105,4 +105,3 @@ def process_articles(articles_list):
             
     
     
-

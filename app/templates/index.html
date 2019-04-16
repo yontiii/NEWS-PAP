@@ -23,6 +23,17 @@
 
         
         {% block content %}
+        <!-- <div class="hero" 
+        style="background-image:url('https://images.pexels.com/photos/751079/pexels-photo-751079.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+                background-repeat: no-repeat;
+                background-size: cover;
+                width:100%;
+                height:50vh;"
+                >
+
+        </div> -->
+
+        
         <div class="container">
 
             <h1 style="color:#2196F3;text-decoration-line:underline;text-align:center ">TOP SOURCES</h1>
@@ -33,7 +44,7 @@
                             <div class="card-deck">
                                     <div class="card" style="box-shadow: 3px 3px 5px #CFD8DC">
                                             <div class="card-content">
-                                                <div class="card-header-blue" style="color:#03A9F4">
+                                                <div class="card-header-blue" style="color:#00BCD4">
                                                    <h2 class="card-heading" style="text-align:center;text-decoration-line: underline">{{source.name}}</h2>
                                                    </div>
                                                    <div class="card-body">
@@ -41,7 +52,7 @@
                                                         {{source.description | truncate(80)}}
                                                         
                                                     </p>
-                                                    <a href="/articles/{{source.id}}" class="btn btn-info btn-sm "><i class="fal fa-forward">VIEW ARTICLES</i></a>
+                                                    <a href="/articles/{{source.id}}" class="btn btn-primary">view articles</a>
                                                  </div>
                                     </div>
                                     
